@@ -1,0 +1,36 @@
+<div class="table-responsive pt-2" ng-controller="patientListController">
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active">Patients</li>
+    </ol>
+    </nav>
+    <div class="mt-2 mb-2">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="search"><i class="fa fa-search"></i></span>
+            </div>
+            <input ng-model="search.name" type="text" class="form-control col-md-5 col-sm-12" placeholder="SEARCH" aria-label="Username" aria-describedby="search">
+        </div>
+    </div>
+    <table class="table">
+        <thead class="thead-dark ">
+          <tr>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>ID Number</th>
+            <th>Gender</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="patient in patiens | filter:search track by $index ">
+                <td>{{patient.name}}</td>
+                <td>{{patient.last_name}}</td>
+                <td>{{patient.id_number}}</td>
+                <td>{{patient.gender}}</td>
+                <td>{{patient.age}}</td>
+            </tr>          
+        </tbody>
+    </table>
+</div>

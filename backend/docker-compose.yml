@@ -1,0 +1,27 @@
+version: '3'
+services:
+ backapi:
+   build:
+    context: 'config-docker-php'
+    dockerfile: Dockerfile    
+   ports:
+      - "8089:80"
+   working_dir: /var/www/html/
+   volumes:
+      - ./:/var/www/html
+ backmysql:
+    image: mysql:5.7.33
+    restart: always
+    environment:
+         MYSQL_ROOT_PASSWORD: root
+         MYSQL_DATABASE: db_erward
+    volumes:
+     - ./mysql-data:/var/lib/mysql
+ phpmyadmin:
+    image: phpmyadmin
+    depends_on:
+      - backmysql
+    environment:
+          - PMA_ARBITRARY=1
+    ports:
+        - "8090:80"

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Emergency</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="/assets/css/core/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/core/angular-confirm.css">
+        <link rel="stylesheet" href="/assets/css/fontawesome5/css/all.css">
+    </head>
+    <body>
+        <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="#"><i class="fa fa-clinic-medical"></i> Emergency</a>
+
+                <ul class="navbar-nav ml-md-auto">
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-user-circle"></i> Admin</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+            <div class="position-relative overflow-hidden text-center bg-light" style="max-height: 300px;">
+                    <img src="/assets/images/back1.jpg" class="img-fluid">
+            </div>    
+        </header>
+        
+        <main ng-app="emergency">
+            <div class="row mt-2 container-fluid">
+                <div class="col-sm-12 col-md-9 shadow-lg" ng-view></div>
+                <div class="col-sm-12 col-md-3" id="menu">
+                    <div class="card shadow-lg">
+                        <div class="card-header">
+                            <i class="fa fa-bars"></i> Menu
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="#!/new" ><i class="fas fa-user-plus"></i> New Patient</a></li>
+                            <li class="list-group-item"><a href="#!/list" ><i class="fa fa-user-injured"> </i> List of Patients</a></li>
+                            <li class="list-group-item"><a href="#" ><i class="fa fa-user-md"></i> List of doctors</a></li>
+                            <li class="list-group-item"><a href="#" ><i class="fa fa-user-nurse"></i> List of Nurse</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>            
+        </main>
+        
+        <script src="/assets/js/core/jquery-3.5.1.js"></script>
+        <script src="/assets/js/core/popper.min.js"></script>
+        <script src="/assets/js/core/bootstrap.min.js"></script>
+        <script src="/assets/js/core/angular.min.js"></script>
+        <script src="/assets/js/core/angular-route.min.js"></script>
+        <script src="/assets/js/core/angular-confirm.js"></script>        
+        <script src="/assets/js/core/app.js"></script>
+        <script src="/assets/js/services/PatientService.js"></script>
+        <script src="/assets/js/services/AlertService.js"></script>
+        <script src="/assets/js/controller/patientController.js"></script>
+    </body>
+</html>

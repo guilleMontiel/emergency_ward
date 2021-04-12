@@ -1,0 +1,64 @@
+<nav aria-label="breadcrumb" class="mt-2">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#!/list">Patients</a></li>
+      <li class="breadcrumb-item active">New Patient</li>
+    </ol>
+</nav>
+<div ng-controller="patientNewController" class="p-4">
+ <form novalidate>
+    <div class="form-group row">
+      <label class="col-sm-12 col-md-2 col-form-label">Name</label>
+      <div class="col-sm-12 col-md-8">
+        <input type="text" class="form-control" ng-model="patient.name">
+      </div>    
+    </div>
+    <div class="form-group row">
+     <label class="col-sm-12 col-md-2 col-form-label">Last name</label>
+     <div class="col-sm-12 col-md-8">
+        <input type="text" class="form-control" ng-model="patient.last_name">
+     </div>
+    </div>
+    <div class="form-group row">      
+        <label class="col-sm-12 col-md-2 col-form-label">ID Number</label>
+        <div class="col-sm-12 col-md-8">
+            <input type="text" class="form-control" ng-model="patient.id_number">
+        </div>    
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-12 col-md-2 col-form-label">Address</label>
+        <div class="col-sm-12 col-md-8">
+            <input type="text" class="form-control" id="inputAddress" ng-model="patient.address">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-12 col-md-2 col-form-label">Gender</label>
+        <div class="col-sm-12 col-md-8">
+            <select class="form-control"  ng-model="patient.gender">
+                <option value="">Select...</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">      
+        <label class="col-sm-12 col-md-2 col-form-label">Age</label>
+        <div class="col-sm-12 col-md-8">
+            <input type="text" class="form-control" ng-model="patient.age">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-12 col-md-2 col-form-label">Phone</label>
+        <div class="col-sm-12 col-md-8">
+            <input type="text" class="form-control" ng-model="patient.phone">
+        </div>
+    </div>
+    <div class="form-group row">  
+        <label class="col-sm-12 col-md-2 col-form-label">State</label>
+        <div class="col-sm-12 col-md-8">
+            <input type="text" class="form-control" ng-model="patient.state">
+        </div>
+    </div>
+    <button type="button" class="btn btn-success" ng-click="save()" ><i class="fa fa-save"></i> Save</button>
+</form>
+</div>
