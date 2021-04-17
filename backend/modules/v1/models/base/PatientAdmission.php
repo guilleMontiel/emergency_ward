@@ -17,8 +17,9 @@ use Yii;
  * @property string $diagnostic
  * @property string $reason_for_admission
  * @property integer $internment
- * @property integer $internment_sector
+ * @property integer $internment_unit
  *
+ * @property \app\modules\v1\models\Unit $internmentUnit
  * @property \app\modules\v1\models\Patient $patient
  * @property string $aliasModel
  */
@@ -42,8 +43,9 @@ abstract class PatientAdmission extends \yii\db\ActiveRecord
     {
         return [
             [['admission_date', 'admission_hour'], 'safe'],
-            [['id_patient', 'internment', 'internment_sector'], 'integer'],
+            [['id_patient', 'internment', 'internment_unit'], 'integer'],
             [['anamnesis', 'diagnostic', 'reason_for_admission'], 'string'],
+            [['internment_unit'], 'exist', 'skipOnError' => true, 'targetClass' => \app\modules\v1\models\Unit::className(), 'targetAttribute' => ['internment_unit' => 'id']],
             [['id_patient'], 'exist', 'skipOnError' => true, 'targetClass' => \app\modules\v1\models\Patient::className(), 'targetAttribute' => ['id_patient' => 'id']]
         ];
     }
@@ -62,8 +64,16 @@ abstract class PatientAdmission extends \yii\db\ActiveRecord
             'diagnostic' => 'Diagnostic',
             'reason_for_admission' => 'Reason For Admission',
             'internment' => 'Internment',
-            'internment_sector' => 'Internment Sector',
+            'internment_unit' => 'Internment Unit',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getInternmentUnit()
+    {
+        return $this->hasOne(\app\modules\v1\models\Unit::className(), ['id' => 'internment_unit']);
     }
 
     /**

@@ -1,0 +1,49 @@
+<nav aria-label="breadcrumb" class="mt-2">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#!/list">Patients</a></li>
+    <li class="breadcrumb-item active">New Patient</li>
+  </ol>
+</nav>
+<div class="p-4" ng-controller="newAdmissionController">
+  <form>
+    <div class="form-group">
+      <div class="col-sm-12 col-md-4">
+        <label>Admission Date</label>
+        <input type="date" class="form-control">
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <label>Admission Hour</label>
+        <input type="datetime-local" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-12 col-md-4">
+        <label>Patient</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Anamnesis</label>
+      <textarea class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Reason for the Admission</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <div class="col-sm-12 col-md-4">
+        <label >Internament?</label>
+        <input type="radio" name="internament">
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <label>Internament Unit</label>
+        <select class="form-control">
+          <option>Select...</option>
+        </select>
+      </div>
+
+    </div>
+
+  </form>
+</div>

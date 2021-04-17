@@ -26,15 +26,7 @@ class m210410_045427_tabla_patient extends Migration
         $this->addPrimaryKey('patientpk','patient','id');
         $this->alterColumn('patient', 'id','integer not null auto_increment');
         
-        $this->createTable('social_segurity',array(
-            'id'=>'integer not null',
-            'number'=>'bigint',
-            'id_patient'=>'integer',
-            'active'=>'boolean'
-        ));
-        $this->addPrimaryKey('socialpk','social_segurity', 'id');
-        $this->alterColumn('social_segurity', 'id', 'integer not null auto_increment');
-        $this->addForeignKey('patientfk', 'social_segurity', 'id_patient','patient', 'id');
+
     }
 
     /**
@@ -42,6 +34,8 @@ class m210410_045427_tabla_patient extends Migration
      */
     public function safeDown()
     {
+        $this->dropPrimaryKey('patientpk');
+        $this->dropTable('patient');
         echo "m210410_045427_tabla_patient cannot be reverted.\n";
 
         return false;

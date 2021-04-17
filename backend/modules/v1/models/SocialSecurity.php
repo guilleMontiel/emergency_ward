@@ -3,13 +3,13 @@
 namespace app\modules\v1\models;
 
 use Yii;
-use \app\modules\v1\models\base\SocialSegurity as BaseSocialSegurity;
+use \app\modules\v1\models\base\SocialSecurity as BaseSocialSecurity;
 use yii\helpers\ArrayHelper;
 
 /**
- * This is the model class for table "social_segurity".
+ * This is the model class for table "social_security".
  */
-class SocialSegurity extends BaseSocialSegurity
+class SocialSecurity extends BaseSocialSecurity
 {
 
     public function behaviors()

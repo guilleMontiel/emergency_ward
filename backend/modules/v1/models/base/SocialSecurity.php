@@ -7,7 +7,7 @@ namespace app\modules\v1\models\base;
 use Yii;
 
 /**
- * This is the base-model class for table "social_segurity".
+ * This is the base-model class for table "social_security".
  *
  * @property integer $id
  * @property integer $number
@@ -17,7 +17,7 @@ use Yii;
  * @property \app\modules\v1\models\Patient $patient
  * @property string $aliasModel
  */
-abstract class SocialSegurity extends \yii\db\ActiveRecord
+abstract class SocialSecurity extends \yii\db\ActiveRecord
 {
 
 
@@ -27,7 +27,7 @@ abstract class SocialSegurity extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'social_segurity';
+        return 'social_security';
     }
 
     /**

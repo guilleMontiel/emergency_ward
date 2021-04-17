@@ -21,10 +21,11 @@ class m210410_045734_tabla_patient_admission extends Migration
             'diagnostic'=>'text',
             'reason_for_admission'=>'text',
             'internment'=>'boolean',
-            'internment_sector'=>'integer'
+            'internment_unit'=>'integer'
         ));
         $this->addPrimaryKey('patientadmissionpk', 'patient_admission', 'id');
         $this->addForeignKey('patient_fk', 'patient_admission', 'id_patient', 'patient', 'id');
+        $this->addForeignKey('unitfk','patient_admission','internment_unit','unit','id');
         $this->alterColumn('patient_admission', 'id','integer auto_increment not null');
     }
 
@@ -33,6 +34,10 @@ class m210410_045734_tabla_patient_admission extends Migration
      */
     public function safeDown()
     {
+        $this->dropPrimaryKey('patientadmissionpk');
+        $this->dropForeignKey('patient_fk');
+        $this->dropForeignKey('unitfk');
+        $this->dropTable('patient_admission');
         echo "m210410_045734_tabla_patient_admission cannot be reverted.\n";
 
         return false;
